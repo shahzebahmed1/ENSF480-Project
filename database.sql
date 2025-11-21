@@ -97,3 +97,17 @@ CREATE TABLE Bookings (
     status VARCHAR(20) NOT NULL,
     FOREIGN KEY (flightID) REFERENCES Flights(flightID)
 );
+-- Managing flights
+CREATE TABLE Flights (
+    flightID INT PRIMARY KEY AUTO_INCREMENT,
+    flightNumber VARCHAR(10),
+    airlineID INT,
+    origin VARCHAR(3),
+    destination VARCHAR(3),
+    departureTime DATETIME,
+    arrivalTime DATETIME,
+    price DECIMAL(10, 2),
+    aircraftID INT,
+    FOREIGN KEY (airlineID) REFERENCES Airlines(airlineID),
+    FOREIGN KEY (aircraftID) REFERENCES Aircrafts(aircraftID)
+);
