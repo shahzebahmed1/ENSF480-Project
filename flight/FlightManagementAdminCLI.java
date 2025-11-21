@@ -41,6 +41,7 @@ public class FlightManagementAdminCLI {
                     return;
                 default:
                     System.out.println("Invalid choice.");
+                    break;
             }
         }
     }
