@@ -23,25 +23,16 @@ public class FlightManagementAdminCLI {
             showMenu();
             String choice = scanner.nextLine().trim();
 
-            switch (choice) {
-                case "1":
-                    listFlights();
-                    break;
-                case "2":
-                    addFlight();
-                    break;
-                case "3":
-                    updateFlight();
-                    break;
-                case "4":
-                    deleteFlight();
-                    break;
-                case "0":
+            switch (Integer.parseInt(choice)) {
+                case 1 -> listFlights();
+                case 2 -> addFlight();
+                case 3 -> updateFlight();
+                case 4 -> deleteFlight();
+                case 0 -> {
                     System.out.println("Goodbye.");
                     return;
-                default:
-                    System.out.println("Invalid choice.");
-                    break;
+                }
+                default -> System.out.println("Invalid choice.");
             }
         }
     }
